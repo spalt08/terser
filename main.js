@@ -10,7 +10,7 @@ export async function _default_options() {
 
     Object.keys(infer_options({ 0: 0 })).forEach((component) => {
         const options = infer_options({
-            [component]: {0: 0}
+            [component]: { 0: 0 },
         });
 
         if (options) defs[component] = options;
@@ -25,3 +25,10 @@ async function infer_options(options) {
         return error.defs;
     }
 }
+
+// re-exports
+export { parse } from "./lib/parse.js";
+export { make_node } from "./lib/utils/index.js";
+export { OutputStream } from "./lib/output.js";
+export { Compressor } from "./lib/compress/index.js";
+export * from "./lib/ast.js";
